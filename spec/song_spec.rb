@@ -7,6 +7,7 @@ describe "Song" do
   let!(:hit_me) { Song.new("hit me baby one more time", "Brittany Spears", "pop") }
  
   after(:each) do 
+    Song.class_variable_set(:@@all, [])
     Song.class_variable_set(:@@artists, [])
     Song.class_variable_set(:@@genres, [])
     Song.class_variable_set(:@@count, 0)
